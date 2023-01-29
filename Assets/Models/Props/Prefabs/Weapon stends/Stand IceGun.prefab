@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7271641853095539811}
   - component: {fileID: 7271641853095539813}
   - component: {fileID: 7271641853095539812}
+  - component: {fileID: 8529062842812559312}
+  - component: {fileID: 4859456339114983212}
   m_Layer: 0
   m_Name: IceGunDefault
   m_TagString: Untagged
@@ -83,6 +85,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8529062842812559312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271641853095539810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dc3942d49fbaa45bc037468d1693fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &4859456339114983212
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271641853095539810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18068436, y: 0.59747225, z: 1.0987496}
+  m_Center: {x: 0, y: 0.18261832, z: 0.369601}
 --- !u!1 &7271641853132282932
 GameObject:
   m_ObjectHideFlags: 0

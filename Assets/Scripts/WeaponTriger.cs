@@ -10,6 +10,8 @@ public class WeaponTriger : MonoBehaviour
    	GameObject newWeapon = FindWeaponByName(gameObject.name,t);
    	CharacterMovement playerController = other.gameObject.GetComponent<CharacterMovement>();
 
+	DestroyPlatform();
+
    	if(newWeapon!=null){
    		playerController.isGunPickedUp = true;
    		newWeapon.SetActive(true);
@@ -28,5 +30,9 @@ public class WeaponTriger : MonoBehaviour
 	   	}
    	}
    	return newWeapon;
+   }
+
+   private void DestroyPlatform(){
+		Destroy(gameObject.transform.parent.parent.gameObject);
    }
 }

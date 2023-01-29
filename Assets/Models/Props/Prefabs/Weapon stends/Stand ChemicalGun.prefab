@@ -223,6 +223,8 @@ GameObject:
   - component: {fileID: 3858715868133491899}
   - component: {fileID: 3858715868133491897}
   - component: {fileID: 3858715868133491898}
+  - component: {fileID: 3028499812651484216}
+  - component: {fileID: 3177663922731496430}
   m_Layer: 0
   m_Name: ChemicalGunDefault
   m_TagString: Untagged
@@ -295,6 +297,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3028499812651484216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3858715868133491892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dc3942d49fbaa45bc037468d1693fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &3177663922731496430
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3858715868133491892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20711865, y: 0.45917332, z: 0.78084815}
+  m_Center: {x: -0.000000037252903, y: 0.07735849, z: 0.28505784}
 --- !u!1 &3858715868224228633
 GameObject:
   m_ObjectHideFlags: 0
