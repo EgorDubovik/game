@@ -13,11 +13,7 @@ public class WeaponTriger : MonoBehaviour
 	}
    public void OnTriggerEnter(Collider other){
    	Transform t = other.gameObject.transform.Find("BasicMaleDefault/root/pelvis/spine_01/spine_02/spine_03/clavicle_r/upperarm_r/lowerarm_r/hand_r");
-
    	GameObject newWeapon = FindWeaponByName(self.name,t);
-
-   	
-
    	if(newWeapon!=null){
    		newWeapon.SetActive(true);
    	
