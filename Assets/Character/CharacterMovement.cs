@@ -7,6 +7,8 @@ public class CharacterMovement : MonoBehaviour
 	public float moveSpeed = 5f;
 	public CharacterController controller;
 	public Animator animator;
+	public int gunType;
+	public bool isGunPickedUp = false;
 
 	void Start()
 	{
@@ -23,7 +25,15 @@ public class CharacterMovement : MonoBehaviour
 		controller.Move(move * moveSpeed * Time.deltaTime);
 
 		if(Input.anyKey){
-			if(Input.GetKey(KeyCode.W)) animator.SetBool("IsMovingF",true); 
+			if(Input.GetKey(KeyCode.W)) {
+				if(isGunPickedUp){
+					Debug.Log("Is gun");
+				} else {
+					Debug.Log("No gun animation");
+				}
+				animator.SetBool("IsMovingF",true); 
+
+			}
 			if(Input.GetKey(KeyCode.S)) animator.SetBool("IsMovingB",true); 
 			if(Input.GetKey(KeyCode.A)) animator.SetBool("IsMovingL",true); 
 			if(Input.GetKey(KeyCode.D)) animator.SetBool("IsMovingR",true); 
