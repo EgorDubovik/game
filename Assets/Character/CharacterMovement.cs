@@ -27,9 +27,10 @@ public class CharacterMovement : MonoBehaviour
 		if(Input.anyKey){
 			if(Input.GetKey(KeyCode.W)) {
 				if(isGunPickedUp){
-					Debug.Log("Is gun");
+					
+					// Debug.Log("Is gun");
 				} else {
-					Debug.Log("No gun animation");
+					// Debug.Log("No gun animation");
 				}
 				animator.SetBool("IsMovingF",true); 
 
