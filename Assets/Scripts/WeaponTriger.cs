@@ -10,10 +10,12 @@ public class WeaponTriger : MonoBehaviour
    	GameObject newWeapon = FindWeaponByName(gameObject.name,t);
    	CharacterMovement playerController = other.gameObject.GetComponent<CharacterMovement>();
 
+
 	DestroyPlatform();
 
    	if(newWeapon!=null){
    		playerController.isGunPickedUp = true;
+		playerController.equipmentWeapon = newWeapon.name;
    		newWeapon.SetActive(true);
    	}
    }

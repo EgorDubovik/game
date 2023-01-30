@@ -9,6 +9,8 @@ public class CharacterMovement : MonoBehaviour
 	public Animator animator;
 	public int gunType;
 	public bool isGunPickedUp = false;
+	public string equipmentWeapon;
+
 
 	void Start()
 	{
