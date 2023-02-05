@@ -5,8 +5,8 @@ using UnityEngine;
 public class BuletController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 30f;
-    public float damage = 10f;
+    public float speed;
+    public float damage;
     public bool isAuto;
     public float fierSpeed;
 
@@ -26,7 +26,6 @@ public class BuletController : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         
         if(other.gameObject.tag.Equals("Player")){
-            Debug.Log(other.gameObject.name);
             other.gameObject.GetComponent<Helth>().GetDamage(damage);
         }
         Destroy(gameObject);
