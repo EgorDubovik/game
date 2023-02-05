@@ -6,35 +6,37 @@ public class Shoot : MonoBehaviour
 {
     
     public GameObject fierPlace;
-    private GameObject bulet;
-    public GameObject[] bulets;
-    private CharacterMovement characterMovement;
+    private WeaponController weaponController;
+    private bool isShoot = true;
+    private float lasTimeShoot;
 
     void Start(){
-        characterMovement = GetComponent<CharacterMovement>();
+        
+        weaponController = GetComponent<WeaponController>();
     }
     // Update is called once per frame
     void Update()
     {
-
-        if(Input.GetButtonDown("Fire1")){
-            if(characterMovement.isGunPickedUp)
-                fire();
+        if(Input.GetButton("Fire1")){
+            if(weaponController.isGunPickedUp){
+                if(weaponController.bulet.GetComponent<BuletController>().isAuto)
+                    isShoot = true;
+                if(isShoot){
+                    fire();
+                    isShoot = false;
+                }
+            }
         }
+        if(Input.GetButtonDown("Fire1")) isShoot = true;
     }
 
     void fire(){
 
-        if(characterMovement.equipmentWeapon.Equals("BazookaDefault")){
-            bulet = bulets[0];
-        } else if(characterMovement.equipmentWeapon.Equals("AssaultRifleDefault")){
-            bulet = bulets[1];
-        } else {
-            bulet = bulets[2];
+        if(lasTimeShoot+weaponController.bulet.GetComponent<BuletController>().fierSpeed <= Time.time){
+            lasTimeShoot = Time.time;
+            GameObject newBulet = Instantiate(weaponController.bulet, fierPlace.transform.position, fierPlace.transform.rotation);
+            Destroy(newBulet,5);
         }
-
-        GameObject newBulet = Instantiate(bulet, fierPlace.transform.position, fierPlace.transform.rotation);
-        Destroy(newBulet,5);
     }
 
 }

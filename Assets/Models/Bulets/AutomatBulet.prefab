@@ -113,6 +113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   damage: 10
+  isAuto: 1
+  fierSpeed: 0.2
   firingPoint: {x: 0, y: 0, z: 0}
 --- !u!54 &6490737877716958147
 Rigidbody:

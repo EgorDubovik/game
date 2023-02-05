@@ -65,6 +65,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   damage: 50
+  isAuto: 0
+  fierSpeed: 1
   firingPoint: {x: 0, y: 0, z: 0}
 --- !u!65 &2366626401373903884
 BoxCollider:
