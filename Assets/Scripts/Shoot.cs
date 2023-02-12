@@ -7,11 +7,12 @@ public class Shoot : MonoBehaviour
     
     public GameObject fierPlace;
     private WeaponController weaponController;
+    private CharacterMovement characterMovement;
     private bool isShoot = true;
     private float lasTimeShoot;
 
     void Start(){
-        
+        characterMovement = GetComponent<CharacterMovement>(); 
         weaponController = GetComponent<WeaponController>();
     }
     // Update is called once per frame
@@ -21,6 +22,9 @@ public class Shoot : MonoBehaviour
             if(weaponController.isGunPickedUp){
                 if(weaponController.bulet.GetComponent<BuletController>().isAuto)
                     isShoot = true;
+                
+                if(!isShoot) characterMovement.stopShooting();
+
                 if(isShoot){
                     fire();
                     isShoot = false;
@@ -28,14 +32,19 @@ public class Shoot : MonoBehaviour
             }
         }
         if(Input.GetButtonDown("Fire1")) isShoot = true;
+
+        if(Input.GetMouseButtonUp(0)){
+            characterMovement.stopShooting();
+        }
     }
 
     void fire(){
-
         if(lasTimeShoot+weaponController.bulet.GetComponent<BuletController>().fierSpeed <= Time.time){
             lasTimeShoot = Time.time;
             GameObject newBulet = Instantiate(weaponController.bulet, fierPlace.transform.position, fierPlace.transform.rotation);
             Destroy(newBulet,5);
+
+            characterMovement.startShooting();
         }
     }
 

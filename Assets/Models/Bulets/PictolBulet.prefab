@@ -114,7 +114,7 @@ MonoBehaviour:
   speed: 20
   damage: 1
   isAuto: 0
-  fierSpeed: 0.5
+  fierSpeed: 0.1
   firingPoint: {x: 0, y: 0, z: 0}
 --- !u!54 &6490737877716958147
 Rigidbody:
