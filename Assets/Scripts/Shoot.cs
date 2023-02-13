@@ -10,6 +10,7 @@ public class Shoot : MonoBehaviour
     private CharacterMovement characterMovement;
     private bool isShoot = true;
     private float lasTimeShoot;
+    
 
     void Start(){
         characterMovement = GetComponent<CharacterMovement>(); 

@@ -9,6 +9,7 @@ public class BuletController : MonoBehaviour
     public float damage;
     public bool isAuto;
     public float fierSpeed;
+    public GameObject bazukaRocketExplosen;
 
     public Vector3 firingPoint;
     void Start()
@@ -27,6 +28,11 @@ public class BuletController : MonoBehaviour
         
         if(other.gameObject.tag.Equals("Player")){
             other.gameObject.GetComponent<Helth>().GetDamage(damage);
+        }
+        if(gameObject.name.Equals("BazukaBulet(Clone)")){
+            Debug.Log(gameObject.name);
+            GameObject explosen = Instantiate(bazukaRocketExplosen, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(explosen,1);
         }
         Destroy(gameObject);
     }

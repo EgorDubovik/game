@@ -67,6 +67,7 @@ MonoBehaviour:
   damage: 50
   isAuto: 0
   fierSpeed: 1
+  bazukaRocketExplosen: {fileID: 2556143806357294618, guid: e4302515c037ac148908d1e39735316c, type: 3}
   firingPoint: {x: 0, y: 0, z: 0}
 --- !u!65 &2366626401373903884
 BoxCollider:
