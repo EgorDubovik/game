@@ -9,6 +9,7 @@ public class Rotation : MonoBehaviour
 	void Start()
 	{
 		floorMask = LayerMask.GetMask ("Floor");
+		
 	}
 
 	// Update is called once per frame

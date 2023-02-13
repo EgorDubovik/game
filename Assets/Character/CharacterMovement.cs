@@ -33,12 +33,29 @@ public class CharacterMovement : MonoBehaviour
 			if(Input.GetKey(KeyCode.S)) animator.SetBool("IsMovingB",true); 
 			if(Input.GetKey(KeyCode.A)) animator.SetBool("IsMovingL",true); 
 			if(Input.GetKey(KeyCode.D)) animator.SetBool("IsMovingR",true); 
-			if(Input.GetMouseButton(0)) animator.SetBool("IsShooting",true);
+			// if(Input.GetMouseButton(0)) animator.SetBool("IsShooting",true);
 		}
 		if(Input.GetKeyUp(KeyCode.W)) animator.SetBool("IsMovingF",false); 
 		if(Input.GetKeyUp(KeyCode.S)) animator.SetBool("IsMovingB",false);
 		if(Input.GetKeyUp(KeyCode.A)) animator.SetBool("IsMovingL",false);
 		if(Input.GetKeyUp(KeyCode.D)) animator.SetBool("IsMovingR",false);
-		if(Input.GetMouseButtonUp(0)) animator.SetBool("IsShooting",false);
+		// if(Input.GetMouseButtonUp(0)) animator.SetBool("IsShooting",false);
    }
+
+
+	public void changeAnimationState(string state, int typeOfWeapon){
+		Debug.Log(typeOfWeapon);
+		Debug.Log(state);
+		animator.Play(state);
+		animator.SetInteger("TypeOfWeapon",typeOfWeapon);
+	}
+	public void startShooting(){
+		animator.SetBool("IsShooting",true);
+	}
+
+	public void stopShooting(){
+		animator.SetBool("IsShooting",false);
+	}
+
+   
 }
