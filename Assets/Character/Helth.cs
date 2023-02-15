@@ -8,11 +8,11 @@ public class Helth : MonoBehaviour
 
     private float helthScore;
     public Slider slider;
-    public Animator animator;
+    private CharacterMovement characterMovement;
     // Start is called before the first frame update
     void Start()
     {   
-        animator = GetComponent<Animator>();
+        characterMovement = GetComponent<CharacterMovement>();
         helthScore = 100f;
         GetDamage(0);
     }
@@ -25,12 +25,13 @@ public class Helth : MonoBehaviour
 
     public void GetDamage(float damage){
         // Debug.Log(gameObject.name);
-        if(helthScore - damage >0)
+        if(helthScore - damage >0){
             helthScore -= damage;
-        else{
+            characterMovement.getHit();
+        }else{
             helthScore = 0;
             Destroy(gameObject,5);
-            animator.SetBool("IsDeath", true);
+            characterMovement.getDeath();
         }
         
         slider.value = helthScore;

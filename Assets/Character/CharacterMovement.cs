@@ -12,11 +12,14 @@ public class CharacterMovement : MonoBehaviour
 	public string equipmentWeapon;
 
 
+	private void Awake() {
+		animator = GetComponent<Animator>();	
+	}
 	void Start()
 	{
       controller = GetComponent<CharacterController>();
-      animator = GetComponent<Animator>();
-   }
+      
+   	}
         
   void Update()
   {
@@ -44,8 +47,6 @@ public class CharacterMovement : MonoBehaviour
 
 
 	public void changeAnimationState(string state, int typeOfWeapon){
-		Debug.Log(typeOfWeapon);
-		Debug.Log(state);
 		animator.Play(state);
 		animator.SetInteger("TypeOfWeapon",typeOfWeapon);
 	}
@@ -55,6 +56,14 @@ public class CharacterMovement : MonoBehaviour
 
 	public void stopShooting(){
 		animator.SetBool("IsShooting",false);
+	}
+
+	public void getHit(){
+		animator.SetTrigger("Hit");
+	}
+
+	public void getDeath(){
+		animator.SetBool("IsDeath", true);
 	}
 
    
